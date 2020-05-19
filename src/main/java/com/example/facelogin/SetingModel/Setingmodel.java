@@ -1,32 +1,8 @@
-#### 百度云Api与SpringBoot实现的人脸识别登录功能
-**任何问题都可通过bilibli私信我，虽然我很菜，但是很乐意解答**  
-[bilibli](https://space.bilibili.com/97483909)  
-#### 重要信息：
-1、修改Util下getToken方法的两个参数；参数在百度云人脸识别库中取到  
-2、除了gettoken下的值需要修改外，还需要自己设置LoginService下的组GroupId 不然会报222207错误会引发空指针
-项目中非常重要的gettoken的方法中AK与SK需要自己从百度云人脸识别库获取（代码中删去了这部分）请去Utils下GetToken方法下修改
-#### 1、项目简介
-项目中使用了SpringBoot+Thymleaf+百度云的API接口实现的人脸识别功能，其中融合了人脸库的管理功能，实现对人脸的增删改查。  
-对于原生的百度云API文档可以进入    
- https://cloud.baidu.com/doc/FACE/index.html  
- 
-项目演示和流程介绍可参考视频   
-[视频演示](https://www.bilibili.com/video/av93519949#reply2469727748)
-![image](https://githubpicture.oss-cn-beijing.aliyuncs.com/QQ%E6%88%AA%E5%9B%BE20200304214346.png)
-![image](https://githubpicture.oss-cn-beijing.aliyuncs.com/QQ%E6%88%AA%E5%9B%BE20200304214430.png)
-![image](https://githubpicture.oss-cn-beijing.aliyuncs.com/QQ%E6%88%AA%E5%9B%BE20200304215800.png)
-![image](https://githubpicture.oss-cn-beijing.aliyuncs.com/QQ%E6%88%AA%E5%9B%BE20200304214510.png)
-#### 2、接口方法
-Face包下的的BaiduAiFace类是整个核心功能的接口  
-**FaceRegistration** 方法为人脸注册   
-**FaceUpdate** 方法为人脸更新  
-**FindPersonFaceList** 方法为查询人脸信息
-**FindGroupList** 为查询本组的面部信息
-**DelPersonFace** 为删除人脸   
-**FaceSearch**  为查找人脸
-#### 3、接口参数
-对于每个参数的具体含义与提要提供的参数参考百度云官方文档
-```java
+package com.example.facelogin.SetingModel;
+
+
+import org.springframework.stereotype.Component;
+
 @Component
 public class Setingmodel {
     private String imgpath;
@@ -123,6 +99,3 @@ public class Setingmodel {
         Liveness_Control = liveness_Control;
     }
 }
-
-```
-
